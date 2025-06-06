@@ -1,7 +1,7 @@
 love = require("love")
-player = require("player")
-map = require("mapGen")
-camera = require("camera")
+player = require("player.player")
+map = require("world.mapGen")
+camera = require("player.camera")
 
 function love.draw()
 

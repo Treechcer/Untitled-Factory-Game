@@ -1,4 +1,4 @@
-camera = require("camera")
+camera = require("player.camera")
 
 math.randomseed(os.time())
 local width, height = love.graphics.getDimensions()
