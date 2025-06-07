@@ -1,20 +1,24 @@
+worlData = require("world.worlData")
+
 map = {}
 
-for i = 1, 10, 1 do
+math.randomseed(os.time())
+
+for i = 1, worlData.width, 1 do
 
     local layer = {}
 
-    for j = 1, 10, 1 do
+    for j = 1, worlData.height, 1 do
 
         local r = math.random(3)
         local part
 
         if r == 1 then
-            part = ""
+            part = {type = "grass", isMinable = false}
         elseif r == 2 then
-            part = "iron"
+            part = {type = "iron", isMinable = true}
         elseif r == 3 then
-            part = "coal"
+            part = {type = "coal", isMinable = true}
         end
 
         table.insert(layer, j, part)
