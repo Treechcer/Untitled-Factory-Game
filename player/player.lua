@@ -5,9 +5,13 @@ local width, height = love.graphics.getDimensions()
 player = {
     x = width / 2 - 25,
     y = height / 2 - 25,
-    width = 50,
-    height = 50,
-    speed = 300
+    width = width / 10,
+    height = height / 10,
+    speed = 300,
+
+    inventory = {
+        stone = 0, ironOre = 0, ironBar = 0, coal = 0
+    }
 }
 
 function player.move(dir, dt)

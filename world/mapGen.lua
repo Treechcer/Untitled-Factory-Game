@@ -1,5 +1,9 @@
 worlData = require("world.worlData")
 
+function makePart(type, isMinable)
+    return {type = type, isMinable = isMinable}
+end
+
 map = {}
 
 math.randomseed(os.time())
@@ -10,15 +14,17 @@ for i = 1, worlData.width, 1 do
 
     for j = 1, worlData.height, 1 do
 
-        local r = math.random(3)
+        local r = math.random(4)
         local part
 
         if r == 1 then
-            part = {type = "grass", isMinable = false}
+            part = makePart("grass", false)
         elseif r == 2 then
-            part = {type = "iron", isMinable = true}
+            part = makePart("iron", true)
         elseif r == 3 then
-            part = {type = "coal", isMinable = true}
+            part = makePart("coal", true)
+        elseif r == 4 then
+            part = makePart("stone", true)
         end
 
         table.insert(layer, j, part)
