@@ -1,9 +1,9 @@
-worlData = require("world.worlData")
+worldData = require("world.worlData")
 
 camera = {
     x = 0,
     y = 0,
-    speed = 1500,
+    speed = 300,
 }
 
 function camera.viewPort(dir, dt)
@@ -12,31 +12,27 @@ function camera.viewPort(dir, dt)
     camera.moved = false
 
     local width, height = love.graphics.getDimensions()
-    local X = 20
-    local Y = 20
+
+    local X = width / 2 - 25
+    local Y = height / 2 - 25
 
     local len = math.sqrt(dir.x^2 + dir.y^2)
-    local move = false
 
-if (player.x < X or player.x > 750 - X or player.y < Y or player.y > 600 - Y) then
-    if player.x < X and camera.x > 0 then
-        move = true
-    elseif player.x > 750 - X and camera.x < 3200 then
-        move = true
-    elseif player.y < Y and camera.y > 0 then
-        move = true
-    elseif player.y > 550 - Y and camera.y < 2400 then
-        --[[
-            this doesn't work for some reason, so I'll do it later hopefully
-        ]]
-        move = true
-    end
-    if not move then
+    if (player.x >= 0 and player.x <= X) and dir.x > 0 and len ~= 0 then
         player.move(dir, dt)
+        camera.moved = true
+    elseif (player.x <= 750 and player.x >= 750 - X) and dir.x < 0 and len ~= 0 then
+        player.move(dir, dt)
+        camera.moved = true
+    elseif (player.y >= 0 and player.y <= Y) and dir.y > 0 and len ~= 0 then
+        player.move(dir, dt)
+        camera.moved = true
+    elseif (player.y <= 550 and player.y >= 550 - Y) and dir.y < 0 and len ~= 0 then
+        player.move(dir, dt)
+        camera.moved = true
     end
-end
 
-    if len ~= 0 and ((player.x > X and player.y > Y) or (move)) then
+    if len ~= 0 and not camera.moved then
         camera.x = camera.x + (dir.x / len) * camera.speed * dt
         camera.y = camera.y + (dir.y / len) * camera.speed * dt
         camera.moved = true

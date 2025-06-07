@@ -7,7 +7,7 @@ player = {
     y = height / 2 - 25,
     width = 50,
     height = 50,
-    speed = 1500
+    speed = 300
 }
 
 function player.move(dir, dt)
