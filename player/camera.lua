@@ -1,4 +1,4 @@
-worldData = require("world.worlData")
+worldData = require("world.worldData")
 
 camera = {
     x = 0,
@@ -41,8 +41,8 @@ function camera.viewPort(dir, dt)
     if camera.x < 0 then
         camera.x = 0
         player.move(dir, dt)
-    elseif camera.x > 3200 then
-        camera.x = 3200
+    elseif camera.x > 2200 then
+        camera.x = 2200
         player.move(dir, dt)
     end
 

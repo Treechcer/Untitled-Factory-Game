@@ -1,4 +1,4 @@
-worlData = require("world.worlData")
+worldData = require("world.worldData")
 
 function makePart(type, isMinable)
     return {type = type, isMinable = isMinable}
@@ -8,11 +8,11 @@ map = {}
 
 math.randomseed(os.time())
 
-for i = 1, worlData.width, 1 do
+for i = 1, worldData.width, 1 do
 
     local layer = {}
 
-    for j = 1, worlData.height, 1 do
+    for j = 1, worldData.height, 1 do
 
         local r = math.random(4)
         local part

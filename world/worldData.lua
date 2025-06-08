@@ -1,6 +1,6 @@
-worlData = {
+worldData = {
     width = 50,
     height = 50
 }
 
-return worlData
+return worldData

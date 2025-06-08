@@ -5,7 +5,7 @@ local width, height = love.graphics.getDimensions()
 player = {
     x = width / 2 - 25,
     y = height / 2 - 25,
-    width = width / 10,
+    width = height / 10,
     height = height / 10,
     speed = 300,
 
@@ -24,13 +24,13 @@ function player.move(dir, dt)
 
     if player.x < 0 then
         player.x = 0
-    elseif player.x > 750 then
-        player.x = 750
+    elseif player.x > 740 then
+        player.x = 740
     end
     if player.y < 0 then
         player.y = 0
-    elseif player.y > 550 then
-        player.y = 550
+    elseif player.y > 540 then
+        player.y = 540
     end
 end
 
