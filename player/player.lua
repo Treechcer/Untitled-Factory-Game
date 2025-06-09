@@ -8,7 +8,8 @@ player = {
     width = height / 10,
     height = height / 10,
     speed = 300,
-
+    tileX = 0,
+    tileY = 0,
     inventory = {
         stone = 0, ironOre = 0, ironBar = 0, coal = 0
     }
@@ -32,6 +33,16 @@ function player.move(dir, dt)
     elseif player.y > 540 then
         player.y = 540
     end
+end
+
+function player.tiles()
+    local worlPosX = player.x + camera.x
+    local worlPosY = player.y + camera.y
+    local tileSize = height / 10
+
+    
+    player.tileX = math.floor(worlPosX / tileSize) + 1
+    player.tileY = math.floor(worlPosY / tileSize) + 1
 end
 
 return player

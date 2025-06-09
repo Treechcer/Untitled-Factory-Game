@@ -28,7 +28,7 @@ function drawGame()
     love.graphics.rectangle("fill", player.x, player.y, player.width, player.height)
 
     love.graphics.setColor(0, 0, 0)
-    love.graphics.print(player.y, 100, 100)
+    love.graphics.print(player.tileX .. " " .. player.tileY, 100, 100)
 end
 
 function love.mousepressed(x, y, istouch)
