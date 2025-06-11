@@ -33,6 +33,8 @@ function player.move(dir, dt)
     elseif player.y > 540 then
         player.y = 540
     end
+
+    player.tiles()
 end
 
 function player.tiles()
@@ -40,7 +42,7 @@ function player.tiles()
     local worlPosY = player.y + camera.y
     local tileSize = height / 10
 
-    
+
     player.tileX = math.floor(worlPosX / tileSize) + 1
     player.tileY = math.floor(worlPosY / tileSize) + 1
 end

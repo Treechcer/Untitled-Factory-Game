@@ -24,6 +24,12 @@ function drawGame()
         end
     end
 
+    local tileSize = height / 10
+    for _, build in pairs(buildings.active) do
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.rectangle("fill", (build.tileX - 1) * tileSize - camera.x, (build.tileY - 1) * tileSize - camera.y, build.width * tileSize, build.height * tileSize)
+    end
+
     love.graphics.setColor(0.6, 0.8, 0.5)
     love.graphics.rectangle("fill", player.x, player.y, player.width, player.height)
 
@@ -55,30 +61,30 @@ function love.update(dt)
     elseif game.gameState == "IN-GAME" then
             move = {x = 0, y = 0}
 
-    if love.keyboard.isDown("w")then
-        move.y = -1
-    end
-    if love.keyboard.isDown("s") then
-        move.y = 1
-    end
-    if love.keyboard.isDown("a") then
-        move.x = -1
-    end
-    if love.keyboard.isDown("d") then
-        move.x = 1
-    end
+        if love.keyboard.isDown("w")then
+            move.y = -1
+        end
+        if love.keyboard.isDown("s") then
+            move.y = 1
+        end
+        if love.keyboard.isDown("a") then
+            move.x = -1
+        end
+        if love.keyboard.isDown("d") then
+            move.x = 1
+        end
 
-    if love.keyboard.isDown("up") then
-        buildings.build()
-    elseif love.keyboard.isDown("down") then
-        buildings.build()
-    elseif love.keyboard.isDown("left") then
-        buildings.build()
-    elseif love.keyboard.isDown("right") then
-        buildings.build()
-    end
+        if love.keyboard.isDown("up") then
+            buildings.build({x = 0, y = -1})
+        elseif love.keyboard.isDown("down") then
+            buildings.build({x = 0, y = 1})
+        elseif love.keyboard.isDown("left") then
+            buildings.build({x = -1, y = 0})
+        elseif love.keyboard.isDown("right") then
+            buildings.build({x = 1, y = 0})
+        end
 
-        camera.viewPort({x = move.x, y = move.y}, dt)
+            camera.viewPort({x = move.x, y = move.y}, dt)
     end
 
 end
