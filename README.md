@@ -7,11 +7,17 @@ Small factorio-like game I'm working on, with [LÖVE2D](https://www.love2d.org).
 
 ## player + camera
 
-- The player can move on the whole map. - Viewporting / camera system that move switch player movement as it's in most of top down 2D games.
+- The player can move on the whole map.
+
+- Viewporting / camera system that move switch player movement as it's in most of top down 2D games.
 
 ## map + generation
 
-The whole map is randomly generated (now there are only 3 types of "blocks" - grass, iron and coal, you can't interact with them in any way at this point in development).
+-Map is randomly generated 
+
+-Now there are only 3 types of "blocks".
+
+-grass, iron and coal, with Jo interaction for now.
 
 ## building
 
