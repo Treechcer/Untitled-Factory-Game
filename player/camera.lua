@@ -16,7 +16,7 @@ function camera.viewPort(dir, dt)
     local X = width / 2 - 25
     local Y = height / 2 - 25
 
-    local len = math.sqrt(dir.x^2 + dir.y^2)
+    local len = math.sqrt(dir.x ^ 2 + dir.y ^ 2)
 
     if (player.x >= 0 and player.x <= X) and dir.x > 0 and len ~= 0 then
         player.move(dir, dt)
@@ -54,6 +54,5 @@ function camera.viewPort(dir, dt)
         player.move(dir, dt)
     end
 end
-
 
 return camera

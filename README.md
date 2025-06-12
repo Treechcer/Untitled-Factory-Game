@@ -1,7 +1,6 @@
 # Untitled Factory Game
 
-Small factorio-like game I'm working on, with [LÖVE2D](https://www.love2d.org). 
-
+Small factorio-like game I'm working on, with [LÖVE2D](https://www.love2d.org).
 
 # features
 
@@ -13,7 +12,7 @@ Small factorio-like game I'm working on, with [LÖVE2D](https://www.love2d.org).
 
 ## map + generation
 
-- Map is randomly generated 
+- Map is randomly generated
 
 - Now there are only 3 types of "blocks" (`grass`, `iron` and `coal`) with Jo interaction for now.
 
@@ -25,10 +24,10 @@ Small factorio-like game I'm working on, with [LÖVE2D](https://www.love2d.org).
 
 # future
 
-- I want to add the building to work and the buildings. 
+- I want to add the building to work and the buildings.
 
 - I want to make some UI for the game.
 
-- I want to make it have pixel art graphics. 
+- I want to make it have pixel art graphics.
 
 - And more...

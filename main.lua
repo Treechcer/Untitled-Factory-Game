@@ -20,14 +20,16 @@ function drawGame()
             elseif map[i][j].type == "stone" then
                 love.graphics.setColor(0.4, 0.4, 0.45)
             end
-            love.graphics.rectangle("fill", i * height / 10 - height / 10 - camera.x, j * height / 10 - height / 10 - camera.y, height / 10, height / 10)
+            love.graphics.rectangle("fill", i * height / 10 - height / 10 - camera.x,
+                j * height / 10 - height / 10 - camera.y, height / 10, height / 10)
         end
     end
 
     local tileSize = height / 10
     for _, build in pairs(buildings.active) do
         love.graphics.setColor(0, 0, 0)
-        love.graphics.rectangle("fill", (build.tileX - 1) * tileSize - camera.x, (build.tileY - 1) * tileSize - camera.y, build.width * tileSize, build.height * tileSize)
+        love.graphics.rectangle("fill", (build.tileX - 1) * tileSize - camera.x, (build.tileY - 1) * tileSize - camera.y,
+            build.width * tileSize, build.height * tileSize)
     end
 
     love.graphics.setColor(0.6, 0.8, 0.5)
@@ -45,7 +47,7 @@ end
 
 function love.draw()
     if game.gameState == "MENU" then
-       menu.drawMenu()
+        menu.drawMenu()
     elseif game.gameState == "IN-GAME" then
         drawGame()
     end
@@ -59,9 +61,9 @@ function love.update(dt)
     if game.gameState == "MENU" then
 
     elseif game.gameState == "IN-GAME" then
-            move = {x = 0, y = 0}
+        move = { x = 0, y = 0 }
 
-        if love.keyboard.isDown("w")then
+        if love.keyboard.isDown("w") then
             move.y = -1
         end
         if love.keyboard.isDown("s") then
@@ -75,16 +77,15 @@ function love.update(dt)
         end
 
         if love.keyboard.isDown("up") then
-            buildings.build({x = 0, y = -1})
+            buildings.build({ x = 0, y = -1 })
         elseif love.keyboard.isDown("down") then
-            buildings.build({x = 0, y = 1})
+            buildings.build({ x = 0, y = 1 })
         elseif love.keyboard.isDown("left") then
-            buildings.build({x = -1, y = 0})
+            buildings.build({ x = -1, y = 0 })
         elseif love.keyboard.isDown("right") then
-            buildings.build({x = 1, y = 0})
+            buildings.build({ x = 1, y = 0 })
         end
 
-            camera.viewPort({x = move.x, y = move.y}, dt)
+        camera.viewPort({ x = move.x, y = move.y }, dt)
     end
-
 end

@@ -16,7 +16,7 @@ player = {
 }
 
 function player.move(dir, dt)
-    local len = ((dir.x ^ 2) + (dir.y ^ 2)) ^ (1/2)
+    local len = ((dir.x ^ 2) + (dir.y ^ 2)) ^ (1 / 2)
 
     if len ~= 0 then
         player.y = player.y + ((dir.y / len) * player.speed * dt)

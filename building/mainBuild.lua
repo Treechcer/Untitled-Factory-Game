@@ -5,7 +5,7 @@ local width, height = love.graphics.getDimensions()
 
 buildings = {
     structures = {
-        furnace = {stone = 10}
+        furnace = { stone = 10 }
     },
     active = {},
     numerator = 0
@@ -21,7 +21,7 @@ function buildings.build(pos)
     X = math.floor(worlPosX / tileSize) + 1
     Y = math.floor(worlPosY / tileSize) + 1
 
-    buildings.active["b" .. buildings.numerator] = {tileX = X, tileY = Y, width = 1, height = 1, type = "furnace"}
+    buildings.active["b" .. buildings.numerator] = { tileX = X, tileY = Y, width = 1, height = 1, type = "furnace" }
     buildings.numerator = buildings.numerator + 1
 end
 

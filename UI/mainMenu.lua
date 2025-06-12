@@ -13,10 +13,11 @@ menu.button = {
 function menu.drawMenu()
     local player = require("player.player")
 
-    love.graphics.setColor(1,1,1)
-    love.graphics.rectangle("fill", (width / 2) - (menu.button.width / 2), (height / 2) - (menu.button.height / 2), menu.button.width, menu.button.height)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.rectangle("fill", (width / 2) - (menu.button.width / 2), (height / 2) - (menu.button.height / 2),
+        menu.button.width, menu.button.height)
 
-    love.graphics.setColor(0,0,0)
+    love.graphics.setColor(0, 0, 0)
     font = love.graphics.newFont(24)
     love.graphics.setFont(font)
     love.graphics.print(menu.button.text, (width / 2) - (menu.button.width / 3), (height / 2) - (menu.button.height / 2))
